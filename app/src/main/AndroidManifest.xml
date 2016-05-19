@@ -23,6 +23,8 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".activity.DetailsIssueInProjectActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.AddIssueActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
