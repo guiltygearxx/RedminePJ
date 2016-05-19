@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnDescription" type="id">btnDescription</item>
+    <item name="btnStatus" type="id">btnStatus</item>
+    <item name="btnAssignedTo" type="id">btnAssignedTo</item>
+    <item name="btnPriority" type="id">btnPriority</item>
+    <item name="btnDoneRatio" type="id">btnDoneRatio</item>
+    <item name="btnStartDate" type="id">btnStartDate</item>
+    <item name="btnDueDate" type="id">btnDueDate</item>
+    <item name="btnFixedVersion" type="id">btnFixedVersion</item>
+    <item name="btnCategory" type="id">btnCategory</item>
+    <item name="btnEstimatedHours" type="id">btnEstimatedHours</item>
+    <item name="btnParentIssueID" type="id">btnParentIssueID</item>
+    <item name="textParentIssueID" type="id">textParentIssueID</item>
+    <item name="textAttachmentCnt" type="id">textAttachmentCnt</item>
+</resources>

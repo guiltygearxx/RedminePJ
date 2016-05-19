@@ -1,0 +1,107 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="BackGroundColor">
+        <item name="android:background">#faefe9</item>
+    </style>
+
+    <style name="IssueDetailItemTitle">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff5f739f</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">120.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="IssueDetailItemValue">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textColor">#ff333333</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">10.0dip</item>
+        <item name="android:paddingTop">3.0dip</item>
+        <item name="android:paddingBottom">3.0dip</item>
+        <item name="android:layout_width">240.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">3.0</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
+    <style name="CellButtonEditLinearLayout">
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingTop">12.0dip</item>
+        <item name="android:paddingRight">5.0dip</item>
+        <item name="android:paddingBottom">12.0dip</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">10.0dip</item>
+        <item name="android:layout_marginRight">10.0dip</item>
+    </style>
+
+    <style name="CellButtonEditTextTitle">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff666666</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.2</item>
+    </style>
+
+    <style name="CellButtonEditTextValue">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff6697ff</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">6.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="arrow">
+        <item name="android:gravity">right</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">3.0dip</item>
+        <item name="android:layout_width">25.0dip</item>
+        <item name="android:layout_height">25.0dip</item>
+        <item name="android:src">@drawable/icon_arrow</item>
+    </style>
+
+    <style name="IssueDetailItemIcon">
+        <item name="android:gravity">left</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:paddingLeft">5.0dip</item>
+        <item name="android:paddingRight">3.0dip</item>
+        <item name="android:layout_width">25.0dip</item>
+        <item name="android:layout_height">25.0dip</item>
+    </style>
+
+</resources>

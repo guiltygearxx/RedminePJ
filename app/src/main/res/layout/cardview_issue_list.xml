@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
+    card_view:cardCornerRadius="1dp">
+
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="90dp"
+       android:shrinkColumns="*"
+       android:stretchColumns="*"
+       android:layout_marginLeft="3dp"
+       android:layout_marginRight="3dp">
+
+       <TableRow>
+           <TextView
+               android:id="@+id/card_view_tv_name_issue"
+               android:layout_width="match_parent"
+               android:layout_height="30dp"
+               android:layout_span="3"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:gravity="center_vertical"
+               android:textSize="17sp"
+               android:textStyle="bold"
+               android:textColor="#000000"
+               android:text="project 123" />
+
+       </TableRow>
+
+       <TableRow>
+           <TextView
+               android:id="@+id/card_view_tv_id_issue"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#ff0000"
+               android:text="#23" />
+
+           <TextView
+               android:id="@+id/card_view_tv_status_issue"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000"
+               android:text="New" />
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:orientation="horizontal"
+               android:layout_weight="1">
+
+               <ImageView
+                   android:id="@+id/card_view_imgv_icon_user"
+                   android:layout_width="16sp"
+                   android:layout_height="16sp"
+                   android:src="@drawable/male" />
+
+               <TextView
+                   android:id="@+id/card_view_tv_name_user_assigned"
+                   android:layout_width="match_parent"
+                   android:layout_height="20sp"
+                   android:ellipsize="end"
+                   android:maxLines="1"
+                   android:singleLine="true"
+                   android:textColor="@color/abc_secondary_text_material_light"
+                   android:text="Admin Root"
+                   android:gravity="center_vertical"
+                   android:layout_marginLeft="5sp" />
+           </LinearLayout>
+
+
+       </TableRow>
+
+       <TableRow>
+           <ImageView
+               android:id="@+id/card_view_imgv_icon_tracker"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:src="@drawable/notification_template_icon_bg" />
+
+           <TextView
+               android:id="@+id/card_view_tv_priority"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000"
+               android:text="Nomal" />
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1">
+               <ImageView
+                   android:id="@+id/card_view_imgv_icon_clock"
+                   android:layout_width="16sp"
+                   android:layout_height="19dp"
+                   android:layout_gravity="center_vertical"
+                   android:src="@drawable/clock" />
+
+               <TextView
+                   android:id="@+id/card_view_tv_due_date"
+                   android:layout_height="20sp"
+                   android:layout_width="match_parent"
+                   android:text="12:00/20/1/20"
+                   android:textColor="@color/primary_dark"
+                   android:layout_marginLeft="5sp"
+                   android:gravity="center_vertical" />
+
+           </LinearLayout>
+
+       </TableRow>
+
+       <TableRow>
+           <TextView
+               android:id="@+id/card_view_tv_name_project"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="@color/abc_secondary_text_material_light"
+               android:text="Demo application" />
+
+           <TextView
+               android:id="@+id/card_view_tv_version_project"
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:ellipsize="end"
+               android:maxLines="1"
+               android:singleLine="true"
+               android:textColor="#000000"
+               android:text="v0.1" />
+
+
+           <LinearLayout
+               android:layout_width="0dp"
+               android:layout_height="20dp"
+               android:layout_weight="1"
+               android:orientation="horizontal">
+               <ProgressBar
+                   android:id="@+id/card_view_progressbar_issue"
+                   android:layout_width="90sp"
+                   android:layout_height="20dp"
+                   android:indeterminate="false"
+                   android:progress="1"
+                   style="?android:attr/progressBarStyleHorizontal"/>
+
+               <TextView
+                   android:id="@+id/card_view_tv_number_percent"
+                   android:layout_height="20dp"
+                   android:layout_width="wrap_content"
+                   android:text="10%"
+                   android:textColor="@color/abc_secondary_text_material_light"
+                   android:gravity="right" />
+           </LinearLayout>
+
+
+
+       </TableRow>
+
+   </TableLayout>
+
+</android.support.v7.widget.CardView>
