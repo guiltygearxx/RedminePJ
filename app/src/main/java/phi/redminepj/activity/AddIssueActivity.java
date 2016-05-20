@@ -26,21 +26,25 @@ import java.util.ArrayList;
 
 import phi.redminepj.R;
 import phi.redminepj.adapters.RecyclerViewProjectAdapter1;
+import phi.redminepj.adapters.RecyclerViewTrackersAdapter;
 import phi.redminepj.models.Project;
+import phi.redminepj.models.Tracker;
 import phi.redminepj.network.api.APIClient;
 import phi.redminepj.network.response.ProjectCallBack;
+import phi.redminepj.network.response.TrackersCallBack;
 
 /**
  * Created by guiltygearxx on 19-05-2016.
  */
 public class AddIssueActivity extends AppCompatActivity {
     private static RecyclerViewProjectAdapter1 recyclerViewProjectAdapter;
+    private static RecyclerViewTrackersAdapter recyclerViewTrackersAdapter;
     static final int START_DATE_DIALOG_ID = 1;
     static final int DUE_DATE_DIALOG_ID = 2;
     LinearLayout btnStartDate, btnDueDate, btnDoneRatio, btnProject;
     private int year, month, day;
     String date;
-    TextView textStartDate, textDueDate, textDoneRatio, textProject, textSubject, textDescription, textEstimatedHours, textParentIssueID;
+    TextView textStartDate, textDueDate, textDoneRatio, textProject, textTracker, textPriority, textSubject, textDescription, textEstimatedHours, textParentIssueID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,7 @@ public class AddIssueActivity extends AppCompatActivity {
 
     public void getAllField() {
         textProject = (TextView) findViewById(R.id.textProject);
+        textTracker = (TextView) findViewById(R.id.textTracker);
         btnStartDate = (LinearLayout) findViewById(R.id.btnStartDate);
         btnDueDate = (LinearLayout) findViewById(R.id.btnDueDate);
         btnDoneRatio = (LinearLayout) findViewById(R.id.btnDoneRatio);
@@ -73,6 +78,7 @@ public class AddIssueActivity extends AppCompatActivity {
         textDueDate = (TextView) findViewById(R.id.textDueDate);
         textDoneRatio = (TextView) findViewById(R.id.textDoneRatio);
         textSubject = (TextView) findViewById(R.id.textSubject);
+        textPriority = (TextView) findViewById(R.id.textPriority);
         textDescription = (TextView) findViewById(R.id.textDescription);
         textEstimatedHours = (TextView) findViewById(R.id.textEstimatedHours);
         textParentIssueID = (TextView) findViewById(R.id.textParentIssueID);
@@ -280,7 +286,51 @@ public class AddIssueActivity extends AppCompatActivity {
     public void onsetTextPriority(View view) {
         final Dialog dialog = new Dialog(AddIssueActivity.this);
         dialog.setContentView(R.layout.list_issuse_priority);
-        final Button btnCancel = (Button)dialog.findViewById(R.id.btnCancel);
+        final Button btnCancel = (Button) dialog.findViewById(R.id.btnCancel);
+        final RadioButton rb0 = (RadioButton) dialog.findViewById(R.id.rb0);
+        final RadioButton rb1 = (RadioButton) dialog.findViewById(R.id.rb1);
+        final RadioButton rb2 = (RadioButton) dialog.findViewById(R.id.rb2);
+        final RadioButton rb3 = (RadioButton) dialog.findViewById(R.id.rb3);
+        final RadioButton rb4 = (RadioButton) dialog.findViewById(R.id.rb4);
+        rb0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textPriority.setText("Low");
+                dialog.dismiss();
+            }
+        });
+
+        rb1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textPriority.setText("Normal");
+                dialog.dismiss();
+            }
+        });
+
+        rb2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textPriority.setText("High");
+                dialog.dismiss();
+            }
+        });
+
+        rb3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textPriority.setText("Urgent");
+                dialog.dismiss();
+            }
+        });
+
+        rb4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textPriority.setText("Immediate");
+                dialog.dismiss();
+            }
+        });
         btnCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -386,6 +436,43 @@ public class AddIssueActivity extends AppCompatActivity {
         });
         dialog.setCancelable(true);
         dialog.setTitle("Project");
+        dialog.show();
+    }
+
+
+    public void getListofTrackers(View view) {
+        final Dialog dialog = new Dialog(AddIssueActivity.this);
+        dialog.setContentView(R.layout.list_issue_tracker);
+        final RecyclerView recyclerViewTracker = (RecyclerView) dialog.findViewById(R.id.recyclerViewTracker);
+        recyclerViewTracker.setHasFixedSize(true);
+        recyclerViewTracker.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+        new APIClient(getBaseContext()).getTrackersforProject(new TrackersCallBack() {
+            @Override
+            public void onCompleted(int statusCode, final ArrayList<Tracker> trackersArrayList) {
+                if (trackersArrayList == null) {
+                    Log.d(APIClient.MY_TAG, "trackersArrayList in ProjectFragment is null, fuck off");
+                } else {
+                    recyclerViewTrackersAdapter = new RecyclerViewTrackersAdapter(getBaseContext(), trackersArrayList);
+                    recyclerViewTracker.setAdapter(recyclerViewTrackersAdapter);
+                    recyclerViewTracker.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerViewTracker, new ClickListener() {
+                        @Override
+                        public void onClick(View view, int position) {
+                            Tracker trackers = trackersArrayList.get(position);
+                            textTracker.setText(trackers.getName().toString());
+                            Toast.makeText(getApplicationContext(), position + " is selected!", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+
+                        @Override
+                        public void onLongClick(View view, int position) {
+
+                        }
+                    }));
+                }
+            }
+        });
+        dialog.setCancelable(true);
+        dialog.setTitle("Tracker");
         dialog.show();
     }
 

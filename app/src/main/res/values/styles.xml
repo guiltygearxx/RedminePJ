@@ -17,6 +17,13 @@
         <item name="android:background">#faefe9</item>
     </style>
 
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">#373737</item>
+    </style>
+
     <style name="IssueDetailItemTitle">
         <item name="android:textSize">14.0sp</item>
         <item name="android:textStyle">bold</item>

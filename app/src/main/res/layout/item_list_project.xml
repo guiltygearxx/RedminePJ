@@ -11,8 +11,7 @@ android:layout_marginTop="5dp">
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="5sp"
-    android:background="@drawable/notification_template_icon_bg">
+    android:layout_marginTop="5sp">
 
     <TextView
         android:layout_width="wrap_content"

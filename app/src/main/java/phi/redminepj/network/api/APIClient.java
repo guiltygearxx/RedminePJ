@@ -12,17 +12,21 @@ import com.koushikdutta.ion.Ion;
 import com.koushikdutta.ion.Response;
 
 import java.text.ParseException;
+import java.util.ArrayList;
 
 import phi.redminepj.activity.MainActivity;
 import phi.redminepj.models.Issue;
 import phi.redminepj.models.IssueDetailModel;
 import phi.redminepj.models.IssueObjectModel;
 import phi.redminepj.models.ProjectObjectModel;
+import phi.redminepj.models.Tracker;
+import phi.redminepj.models.TrackerObjectModel;
 import phi.redminepj.models.User;
 import phi.redminepj.models.UserObjectModel;
 import phi.redminepj.network.response.IssueCallBack;
 import phi.redminepj.network.response.IssueDetailCallBack;
 import phi.redminepj.network.response.ProjectCallBack;
+import phi.redminepj.network.response.TrackersCallBack;
 import phi.redminepj.network.response.UserCallback;
 import phi.redminepj.ultils.Remember;
 
@@ -35,6 +39,8 @@ public class APIClient {
     public static final String API_USER = API_BASE_URL + "users/current.json";
     public static final String API_GET_ISSUE_ID = API_BASE_URL + "issues/";
     public static final String API_ALL_PROJECT = API_BASE_URL + "projects.json";
+    public static final String API_ALL_TRACKERS = API_BASE_URL + "trackers.json";
+    public static final String API_ALL_STATUS = API_BASE_URL + "issue_statuses.json";
     public static final String API_ALL_PROJECT_BY_ID = API_BASE_URL + "issues.json?project_id=";
     public static final String API_ALL_ISSUSE_CURENT_USER_ASSIGNEE = API_BASE_URL + "issues.json?assigned_to_id=me";
 
@@ -102,6 +108,50 @@ public class APIClient {
                             } else {
                                 Log.v(MY_TAG, "Status is not 200. Can't get project from Server");
                                 projectCallBack.onCompleted(status, null);
+                            }
+                        }
+                    });
+
+                    Log.d(MY_TAG, "Username: " + username + " ,Pass: " + password);
+                } else {
+                    Log.d(MY_TAG, "Can not get username, pass");
+                }
+            }
+        });
+
+
+    }
+
+
+
+    public void getTrackersforProject(final TrackersCallBack trackersCallBack) {
+        //String username_restore, password_restore;
+        //ArrayList<Project> projectList = new ArrayList<>();
+        Log.d(MY_TAG, "In getProjectofCurentUser API");
+
+        Remember.restoreUser(context, new UserCallback() {
+            @Override
+            public void User(String username, String password, boolean check) {
+                Log.v(MY_TAG, "In getProjectofCurentUser, Username: " + username + ", Password: " + password + ", Check: " + check);
+                if (check == true) {
+
+                    Ion.with(context).load(API_ALL_TRACKERS).basicAuthentication(username, password)
+                            .asJsonObject().withResponse().setCallback(new FutureCallback<Response<JsonObject>>() {
+                        @Override
+                        public void onCompleted(Exception e, Response<JsonObject> result) {
+
+                            int status = result.getHeaders().code();
+                            Gson gson = new Gson();
+                            Log.v(MY_TAG, " " + result.getResult().toString() + "Status: " + status);
+                            TrackerObjectModel trackerObjectModel = gson.fromJson(result.getResult(), TrackerObjectModel.class);
+
+                            if (status == 200) {
+                                Log.v(MY_TAG, "Get project with apikey saved from Server successfull");
+                                trackersCallBack.onCompleted(status, (trackerObjectModel.getTrackers()));
+
+                            } else {
+                                Log.v(MY_TAG, "Status is not 200. Can't get project from Server");
+                                trackersCallBack.onCompleted(status, null);
                             }
                         }
                     });
