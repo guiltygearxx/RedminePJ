@@ -53,7 +53,12 @@ public class DetailsIssueInProjectActivity extends AppCompatActivity {
                             textIssueID.setText("#" + issue.getId().toString());
                             textCreateDateFromNow.setText(issue.getCreatedOn().toString());
                             textSubject.setText(issue.getSubject().toString());
-                            textDescription.setText(issue.getDescription().toString());
+                            try {
+                                textDescription.setText(issue.getDescription().toString());
+                            } catch (Exception e) {
+                                textDescription.setText("");
+                            }
+
                             textProject.setText(issue.getProject().getName().toString());
                             textStatus.setText(issue.getStatus().getName().toString());
                             textPriority.setText(issue.getPriority().getName().toString());

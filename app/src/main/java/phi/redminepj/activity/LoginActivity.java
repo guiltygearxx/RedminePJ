@@ -24,9 +24,10 @@ public class LoginActivity extends AppCompatActivity {
 
         server = edServier.getText().toString()+"/users/current.json";
         username = edUser.getText().toString();
+        password = edPassword.getText().toString();
+
         Log.d(APIClient.MY_TAG,""+username);
         Log.d(APIClient.MY_TAG,""+password);
-        password = edPassword.getText().toString();
     }
 
     public void loginredmine(View view){

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activity.AddIssueActivity">
 
     <LinearLayout
         android:id="@+id/content_frame"
@@ -15,7 +17,8 @@
             android:id="@+id/btnProject"
             style="@style/CellButtonEditLinearLayout"
             android:layout_marginTop="20dp"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:onClick="getListofProject">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
@@ -51,7 +54,8 @@
         <LinearLayout
             android:id="@+id/btnSubject"
             style="@style/CellButtonEditLinearLayout"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:onClick="onsetTextSubject">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
@@ -69,7 +73,8 @@
         <LinearLayout
             android:id="@id/btnDescription"
             style="@style/CellButtonEditLinearLayout"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:onClick="onsetTexDescription">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
@@ -122,7 +127,8 @@
         <LinearLayout
             android:id="@id/btnPriority"
             style="@style/CellButtonEditLinearLayout"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:onClick="onsetTextPriority">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
@@ -137,9 +143,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@id/btnDoneRatio"
+            android:id="@+id/btnDoneRatio"
             style="@style/CellButtonEditLinearLayout"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:orientation="horizontal"
+            android:onClick="onSetDoneRatio">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
@@ -222,7 +230,8 @@
         <LinearLayout
             android:id="@id/btnEstimatedHours"
             style="@style/CellButtonEditLinearLayout"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:onClick="onsetTextEstimate">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
@@ -239,14 +248,15 @@
         <LinearLayout
             android:id="@id/btnParentIssueID"
             style="@style/CellButtonEditLinearLayout"
-            android:background="@drawable/selector_list_button">
+            android:background="@drawable/selector_list_button"
+            android:onClick="onsetTextParentTask">
 
             <TextView
                 style="@style/CellButtonEditTextTitle"
                 android:text="@string/issue_parent" />
 
             <TextView
-                android:id="@id/textParentIssueID"
+                android:id="@+id/textParentIssueID"
                 style="@style/CellButtonEditTextValue" />
 
             <ImageView style="@style/arrow" />
