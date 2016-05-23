@@ -1,309 +1,381 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="fill_parent">
 
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="10dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="5dp"
-        android:id="@+id/content_frame">
+        android:layout_below="@+id/scrollView">
 
         <LinearLayout
-            android:orientation="vertical"
-            android:background="@drawable/shape_table"
-            android:layout_marginTop="10dp"
+            android:id="@+id/content_frame"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:background="@drawable/shape_table_top">
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_table"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_table_top"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textIssueID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:text="#162"
+                        android:textColor="#333333"
+                        android:textIsSelectable="true"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imgTracker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20sp"
+                        android:src="@drawable/icon_switch" />
+
+                    <TextView
+                        android:id="@+id/textCreateDateFromNow"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:text="Added 1 days ago"
+                        android:textColor="#ff868686"
+                        android:textIsSelectable="true" />
+
+                </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textIssueID"
-                    android:textSize="16sp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="#162"
-                    android:textIsSelectable="true"
-                    android:textColor="#333333"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="10dp" />
-
-                <ImageView
-                    android:id="@+id/imgTracker"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20sp"
-                    android:src="@drawable/icon_switch" />
-
-                <TextView
-                    android:id="@+id/textCreateDateFromNow"
+                    android:id="@+id/textSubject"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:text="Added 1 days ago"
+                    android:background="@drawable/shape_subject"
+                    android:padding="10dp"
+                    android:text="Test NV"
+                    android:textColor="#333333"
                     android:textIsSelectable="true"
-                    android:textColor="#ff868686"
-                    android:gravity="right" />
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textDescription"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:padding="10dp"
+                    android:text="No comment"
+                    android:textColor="#333333"
+                    android:textIsSelectable="true" />
 
             </LinearLayout>
 
-            <TextView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_table"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Project" />
+
+                    <TextView
+                        android:id="@+id/textProject"
+                        style="@style/IssueDetailItemValue"
+                        android:text="Demo Application" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Status" />
+
+                    <TextView
+                        android:id="@+id/textStatus"
+                        style="@style/IssueDetailItemValue"
+                        android:text="New" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Periority" />
+
+                    <TextView
+                        android:id="@+id/textPriority"
+                        style="@style/IssueDetailItemValue"
+                        android:text="Normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Assignee" />
+
+                    <TextView
+                        android:id="@+id/textAssignedTo"
+                        style="@style/IssueDetailItemValue"
+                        android:text="RedMine Admin" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="% Done" />
+
+                    <TextView
+                        android:id="@+id/textDoneRatio"
+                        style="@style/IssueDetailItemValue"
+                        android:text="50%" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView11"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Start date" />
+
+                    <TextView
+                        android:id="@+id/textStartDate"
+                        style="@style/IssueDetailItemValue"
+                        android:text="05/16/2016" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Due date" />
+
+                    <TextView
+                        android:id="@+id/textDueDate"
+                        style="@style/IssueDetailItemValue"
+                        android:text="05/16/2016" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Target vesion" />
+
+                    <TextView
+                        android:id="@+id/textFixedVersion"
+                        style="@style/IssueDetailItemValue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Author" />
+
+                    <TextView
+                        android:id="@+id/textAuthorName"
+                        style="@style/IssueDetailItemValue"
+                        android:text="Redmine Admin" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Create date" />
+
+                    <TextView
+                        android:id="@+id/textCreateDate"
+                        style="@style/IssueDetailItemValue"
+                        android:text="4/29/2016 3:28 AM" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Last updated" />
+
+                    <TextView
+                        android:id="@+id/textUpdateDate"
+                        style="@style/IssueDetailItemValue"
+                        android:text="4/29/2016 3:49 AM" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Category" />
+
+                    <TextView
+                        android:id="@+id/textCategory"
+                        style="@style/IssueDetailItemValue" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textview14"
+                        style="@style/IssueDetailItemTitle"
+                        android:text="Estimated time" />
+
+                    <TextView
+                        android:id="@+id/textEstimatedHours"
+                        style="@style/IssueDetailItemValue"
+                        android:text="9.0" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutCustomFields"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textColor="#333333"
-                android:background="@drawable/shape_subject"
-                android:padding="10dp"
-                android:textIsSelectable="true"
-                android:text="Test NV"
-                android:id="@+id/textSubject"/>
+                android:orientation="vertical"></LinearLayout>
 
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:textColor="#333333"
-                android:autoLink="web"
-                android:text="No comment"
-                android:id="@+id/textDescription"
-                android:textIsSelectable="true"
-                android:padding="10dp"/>
+            <LinearLayout
+                android:id="@+id/layoutAttachment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"></LinearLayout>
+
 
         </LinearLayout>
+    </ScrollView>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_table"
-            android:layout_marginTop="5dp">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="false">
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:text="Project"
-                    style="@style/IssueDetailItemTitle"
-                    android:id="@+id/textView6"/>
-
-                <TextView
-                    android:text="Demo Application"
-                    style="@style/IssueDetailItemValue"
-                    android:id="@+id/textProject"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Status"
-                    android:id="@+id/textView7"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="New"
-                    android:id="@+id/textStatus"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Periority"
-                    android:id="@+id/textView10"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="Normal"
-                    android:id="@+id/textPriority"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Assignee"
-                    android:id="@+id/textView8"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="RedMine Admin"
-                    android:id="@+id/textAssignedTo"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="% Done"
-                    android:id="@+id/textView9"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="50%"
-                    android:id="@+id/textDoneRatio"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Start date"
-                    android:id="@+id/textView11"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="05/16/2016"
-                    android:id="@+id/textStartDate"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Due date"
-                    android:id="@+id/textView12"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="05/16/2016"
-                    android:id="@+id/textDueDate"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Target vesion"
-                    android:id="@+id/textView13"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:id="@+id/textFixedVersion"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Author"
-                    android:id="@+id/textView14"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="Redmine Admin"
-                    android:id="@+id/textAuthorName"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Create date"
-                    android:id="@+id/textView15"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="4/29/2016 3:28 AM"
-                    android:id="@+id/textCreateDate"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Last updated"
-                    android:id="@+id/textView16"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="4/29/2016 3:49 AM"
-                    android:id="@+id/textUpdateDate"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Category"
-                    android:id="@+id/textView17"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:id="@+id/textCategory"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    style="@style/IssueDetailItemTitle"
-                    android:text="Estimated time"
-                    android:id="@+id/textview14"/>
-
-                <TextView
-                    style="@style/IssueDetailItemValue"
-                    android:text="9.0"
-                    android:id="@+id/textEstimatedHours"/>
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
+        <RelativeLayout
+            android:id="@+id/relativeStart"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layoutCustomFields"></LinearLayout>
+            android:layout_height="60sp">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/layoutAttachment"></LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="false"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.2"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:paddingLeft="6.0dip"
+                android:singleLine="true"
+                android:textColor="#ff666666"
+                android:textSize="16.0sp"
+                android:textStyle="bold">
 
+                <TextView
+                    android:id="@+id/txtCancel"
+                    style="@style/CellButtonEditTextTitle"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|left"
+                    android:text="Back"
+                    android:textColor="#ffffff" />
 
-    </LinearLayout>
-</ScrollView>
+                <TextView
+                    android:id="@+id/actionbarNameofProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    android:text="Details Issue"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnEditIssue"
+                    style="@style/CellButtonEditTextTitle"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5sp"
+                    android:gravity="center_vertical|right"
+                    android:text="Edit"
+                    android:textColor="#ffffff"
+                    android:onClick="editIssueActivity" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+</RelativeLayout>

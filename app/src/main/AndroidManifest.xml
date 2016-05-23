@@ -25,6 +25,10 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".activity.AddIssueActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.SearchFilterActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.EditIssueActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

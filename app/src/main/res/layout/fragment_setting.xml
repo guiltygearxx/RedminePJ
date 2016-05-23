@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="false">
+
+        <RelativeLayout
+            android:id="@+id/relativeStart"
+            android:layout_width="fill_parent"
+            android:layout_height="60sp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="false"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.2"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:paddingLeft="6.0dip"
+                android:singleLine="true"
+                android:textColor="#ff666666"
+                android:textSize="16.0sp"
+                android:textStyle="bold">
+
+                <TextView
+                    android:id="@+id/txtCancel"
+                    style="@style/CellButtonEditTextTitle"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|left"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/actionbarNameofProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    android:text="Setup"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSave"
+                    style="@style/CellButtonEditTextTitle"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5sp"
+                    android:gravity="center_vertical|right"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        style="@style/BackGroundColor"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/scrollView">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#faefe9"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@id/textServer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Current Account"
+                android:textColor="#797979"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@id/content_frame"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_label_ptn1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="http://192/168/1/59"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textNameAndVersion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="Redmine Admin - 3.2.1 stable"
+                    android:textColor="#999999"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnAccountSetup"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_setup" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="Account Setting" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnAccountSwitch"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_switch" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="Account Switching" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/textOptionSetup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Option Setting"
+                android:textColor="#797979"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@id/btnMstData"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:singleLine="true"
+                    android:src="@drawable/icon_project" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Master Data Setting"
+                        android:textColor="#333333"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/textAboutApp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="15dp"
+                android:text="About This App"
+                android:textColor="#797979"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/btnFAQ"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_faq" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="FAQ" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnContact"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_report" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="Contact" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnFacebook"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_facebook" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="facebook" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnReview"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_review" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="Write a Review" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnCompany"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/icon_pm" />
+
+                <TextView
+                    style="@style/CellButtonText"
+                    android:text="Company" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/selector_list_button"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    style="@style/CellButtonIcon"
+                    android:src="@drawable/appicon_redminepm" />
+
+                <TextView
+                    android:id="@+id/textApplicationVersion"
+                    style="@style/CellButtonText"
+                    android:text="2.4.0" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

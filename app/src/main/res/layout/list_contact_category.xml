@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#526ae3"
+        android:id="@+id/relativeLayout"></RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/relativeLayout" >
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/radioGroup" >
+
+            <RadioButton
+                android:id="@+id/rb0"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableRight="@android:drawable/btn_radio"
+                android:text="Bug Report"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:checked="false"
+                android:gravity="center_vertical|left"
+                android:background="@drawable/rounder_cornerforlist"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp" />
+
+            <RadioButton
+                android:id="@+id/rb1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableRight="@android:drawable/btn_radio"
+                android:text="Feature Request"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:checked="false"
+                android:gravity="center_vertical|left"
+                android:background="@drawable/rounder_cornerforlist"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableRight="@android:drawable/btn_radio"
+                android:text="Feedback"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:checked="false"
+                android:gravity="center_vertical|left"
+                android:background="@drawable/rounder_cornerforlist"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp" />
+
+            <RadioButton
+                android:id="@+id/rb3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawablePadding="10dp"
+                android:drawableRight="@android:drawable/btn_radio"
+                android:text="Other"
+                android:textSize="20dp"
+                android:layout_alignParentLeft="true"
+                android:checked="false"
+                android:gravity="center_vertical|left"
+                android:background="@drawable/rounder_cornerforlist"
+                android:paddingLeft="10sp"
+                android:paddingRight="10sp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/btnCancel"
+                android:layout_below="@+id/scrollView"
+                android:layout_centerHorizontal="true"
+                android:background="@color/button_material_light" />
+
+        </RadioGroup>
+    </ScrollView>
+
+</RelativeLayout>

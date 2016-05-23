@@ -21,7 +21,7 @@ public class Issue {
     private Tracker tracker;
     @SerializedName("status")
     @Expose
-    private Status status;
+    private IssueStatus status;
     @SerializedName("priority")
     @Expose
     private Priority priority;
@@ -136,7 +136,7 @@ public class Issue {
      * @return
      *     The status
      */
-    public Status getStatus() {
+    public IssueStatus getStatus() {
         return status;
     }
 
@@ -145,7 +145,7 @@ public class Issue {
      * @param status
      *     The status
      */
-    public void setStatus(Status status) {
+    public void setStatus(IssueStatus status) {
         this.status = status;
     }
 

@@ -25,12 +25,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import phi.redminepj.R;
+import phi.redminepj.adapters.RecyclerViewMemberAdapter;
 import phi.redminepj.adapters.RecyclerViewProjectAdapter1;
+import phi.redminepj.adapters.RecyclerViewStatusAdapter;
 import phi.redminepj.adapters.RecyclerViewTrackersAdapter;
+import phi.redminepj.models.IssueStatus;
+import phi.redminepj.models.Membership;
 import phi.redminepj.models.Project;
 import phi.redminepj.models.Tracker;
 import phi.redminepj.network.api.APIClient;
+import phi.redminepj.network.response.MemberCallBack;
 import phi.redminepj.network.response.ProjectCallBack;
+import phi.redminepj.network.response.StatusCallBack;
 import phi.redminepj.network.response.TrackersCallBack;
 
 /**
@@ -39,17 +45,19 @@ import phi.redminepj.network.response.TrackersCallBack;
 public class AddIssueActivity extends AppCompatActivity {
     private static RecyclerViewProjectAdapter1 recyclerViewProjectAdapter;
     private static RecyclerViewTrackersAdapter recyclerViewTrackersAdapter;
+    private static RecyclerViewStatusAdapter recyclerViewStatusAdapter;
+    private static RecyclerViewMemberAdapter recyclerViewMemberAdapter;
     static final int START_DATE_DIALOG_ID = 1;
     static final int DUE_DATE_DIALOG_ID = 2;
     LinearLayout btnStartDate, btnDueDate, btnDoneRatio, btnProject;
     private int year, month, day;
     String date;
-    TextView textStartDate, textDueDate, textDoneRatio, textProject, textTracker, textPriority, textSubject, textDescription, textEstimatedHours, textParentIssueID;
+    TextView textStartDate, textDueDate, textDoneRatio, textProject, textTracker, textStatus, textAssignedTo, textPriority, textSubject, textDescription, textEstimatedHours, textParentIssueID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_issues);
+        setContentView(R.layout.activity_issues_create);
         getAllField();
 
         btnStartDate.setOnClickListener(new View.OnClickListener() {
@@ -65,11 +73,16 @@ public class AddIssueActivity extends AppCompatActivity {
             }
         });
 
+
+
+
     }
 
     public void getAllField() {
         textProject = (TextView) findViewById(R.id.textProject);
         textTracker = (TextView) findViewById(R.id.textTracker);
+        textStatus = (TextView) findViewById(R.id.textStatus);
+        textAssignedTo = (TextView) findViewById(R.id.textAssignedTo);
         btnStartDate = (LinearLayout) findViewById(R.id.btnStartDate);
         btnDueDate = (LinearLayout) findViewById(R.id.btnDueDate);
         btnDoneRatio = (LinearLayout) findViewById(R.id.btnDoneRatio);
@@ -473,6 +486,80 @@ public class AddIssueActivity extends AppCompatActivity {
         });
         dialog.setCancelable(true);
         dialog.setTitle("Tracker");
+        dialog.show();
+    }
+
+
+    public void getListofStatus(View view) {
+        final Dialog dialog = new Dialog(AddIssueActivity.this);
+        dialog.setContentView(R.layout.list_issue_status);
+        final RecyclerView recyclerViewStatus = (RecyclerView) dialog.findViewById(R.id.recyclerViewStatus);
+        recyclerViewStatus.setHasFixedSize(true);
+        recyclerViewStatus.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+        new APIClient(getBaseContext()).getStatusforProject(new StatusCallBack() {
+            @Override
+            public void onCompleted(int statusCode, final ArrayList<IssueStatus> statusArrayList) {
+                if (statusArrayList == null) {
+                    Log.d(APIClient.MY_TAG, "statusArrayList in ProjectFragment is null, fuck off");
+                } else {
+                    Log.d(APIClient.MY_TAG, "statusArrayList in ProjectFragment is:" + statusArrayList.size());
+                    recyclerViewStatusAdapter = new RecyclerViewStatusAdapter(getBaseContext(), statusArrayList);
+                    recyclerViewStatus.setAdapter(recyclerViewStatusAdapter);
+                    recyclerViewStatus.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerViewStatus, new ClickListener() {
+                        @Override
+                        public void onClick(View view, int position) {
+                            IssueStatus status = statusArrayList.get(position);
+                            textStatus.setText(status.getName().toString());
+                            Toast.makeText(getApplicationContext(), position + " is selected!", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+
+                        @Override
+                        public void onLongClick(View view, int position) {
+                        }
+                    }));
+                }
+            }
+        });
+        dialog.setCancelable(true);
+        dialog.setTitle("IssueStatus");
+        dialog.show();
+    }
+
+
+    public void getListofMemberShip(View view) {
+        final Dialog dialog = new Dialog(AddIssueActivity.this);
+        dialog.setContentView(R.layout.list_issuse_assignto);
+        final RecyclerView recyclerViewMember = (RecyclerView) dialog.findViewById(R.id.recyclerViewMemberShip);
+        recyclerViewMember.setHasFixedSize(true);
+        recyclerViewMember.setLayoutManager(new LinearLayoutManager(getBaseContext()));
+        new APIClient(getBaseContext()).getMemberofProject(new MemberCallBack() {
+            @Override
+            public void onCompleted(int statusCode, final ArrayList<Membership> membershipArrayList) {
+                if (membershipArrayList == null) {
+                    Log.d(APIClient.MY_TAG, "membershipArrayList in ProjectFragment is null, fuck off");
+                } else {
+                    Log.d(APIClient.MY_TAG, "membershipArrayList in ProjectFragment is:" + membershipArrayList.size());
+                    recyclerViewMemberAdapter = new RecyclerViewMemberAdapter(getBaseContext(), membershipArrayList);
+                    recyclerViewMember.setAdapter(recyclerViewMemberAdapter);
+                    recyclerViewMember.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerViewMember, new ClickListener() {
+                        @Override
+                        public void onClick(View view, int position) {
+                            Membership membership = membershipArrayList.get(position);
+                            textAssignedTo.setText(membership.getUser().getName().toString());
+                            Toast.makeText(getApplicationContext(), position + " is selected!", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+
+                        @Override
+                        public void onLongClick(View view, int position) {
+                        }
+                    }));
+                }
+            }
+        });
+        dialog.setCancelable(true);
+        dialog.setTitle("IssueStatus");
         dialog.show();
     }
 

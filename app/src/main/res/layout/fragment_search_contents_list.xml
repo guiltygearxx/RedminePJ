@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/BackGroundColor"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@id/textAboutApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Search"
+        android:textColor="#797979"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@id/btnKeywordSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_list_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            style="@style/CellButtonIcon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_keyword" />
+
+        <TextView
+            style="@style/CellButtonText"
+            android:text="Keyword Search" />
+
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnFilterSearch"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_list_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            style="@style/CellButtonIcon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_filter" />
+
+        <TextView
+            style="@style/CellButtonText"
+            android:text="Filter search" />
+
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/btnCustomQuery"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_list_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            style="@style/CellButtonIcon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_query" />
+
+        <TextView
+            style="@style/CellButtonText"
+            android:text="Custom Queries" />
+
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/btnWatchList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_list_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            style="@style/CellButtonIcon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_watch" />
+
+        <TextView
+            style="@style/CellButtonText"
+            android:text="Watch list" />
+
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/btnRoadmap"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_list_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            style="@style/CellButtonIcon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_roadmap" />
+
+        <TextView
+            style="@style/CellButtonText"
+            android:text="Roadmap" />
+
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/btnWiki"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/selector_list_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            style="@style/CellButtonIcon"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/icon_wiki" />
+
+        <TextView
+            style="@style/CellButtonText"
+            android:text="Wiki" />
+
+        <ImageView style="@style/arrow" />
+    </LinearLayout>
+
+</LinearLayout>

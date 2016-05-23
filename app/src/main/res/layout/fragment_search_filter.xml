@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scrollView"
+        android:orientation="vertical"
+        tools:context=".activity.AddIssueActivity">
+
+        <LinearLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <TextView
+                android:id="@id/textTitleFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="filter"
+                android:textColor="#797979"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/btnProject"
+                style="@style/CellButtonEditLinearLayout"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/selector_list_button"
+                android:orientation="horizontal"
+                android:onClick="getListofProjectFilter">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="Project" />
+
+                <TextView
+                    android:id="@+id/textProject"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Demo Application" />
+
+                <ImageView style="@style/arrow" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnStatus"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="@string/issue_status" />
+
+                <TextView
+                    android:id="@+id/textStatus"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Opened Issue" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnTrackers"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button"
+                android:orientation="horizontal">
+                android:id="@+id/btnTracker">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="Tracker" />
+
+                <TextView
+                    android:id="@+id/textTracker"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Bug" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnAssignedTo"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="@string/issue_assigned" />
+
+                <TextView
+                    android:id="@+id/textAssignedTo"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Nguyen Van" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnPriority"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="@string/issue_priority" />
+
+                <TextView
+                    android:id="@+id/textPriority"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Low" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnFixedVersion"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="@string/issue_version" />
+
+                <TextView
+                    android:id="@+id/textFixedVersions"
+                    style="@style/CellButtonEditTextValue" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnCategory"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="@string/issue_category" />
+
+                <TextView
+                    android:id="@+id/textCategorys"
+                    style="@style/CellButtonEditTextValue" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/textTitleOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="sort"
+                android:textColor="#797979"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@id/btnEstimatedHours"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="Item" />
+
+                <TextView
+                    android:id="@+id/textEstimatedHours"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Issue id" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/btnParentIssueID"
+                style="@style/CellButtonEditLinearLayout"
+                android:background="@drawable/selector_list_button">
+
+                <TextView
+                    style="@style/CellButtonEditTextTitle"
+                    android:text="Order" />
+
+                <TextView
+                    android:id="@+id/textParentIssueID"
+                    style="@style/CellButtonEditTextValue"
+                    android:text="Descending order" />
+
+                <ImageView style="@style/arrow" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentTop="true"
+        android:fitsSystemWindows="false">
+
+        <RelativeLayout
+            android:id="@+id/relativeStart"
+            android:layout_width="fill_parent"
+            android:layout_height="60sp">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="false"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.2"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:orientation="horizontal"
+                android:paddingLeft="6.0dip"
+                android:singleLine="true"
+                android:textColor="#ff666666"
+                android:textSize="16.0sp"
+                android:textStyle="bold">
+
+                <TextView
+                    android:id="@+id/txtCancel"
+                    style="@style/CellButtonEditTextTitle"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|left"
+                    android:text="Back"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/actionbarNameofProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center"
+                    android:singleLine="false"
+                    android:text="Filter Search"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSave"
+                    style="@style/CellButtonEditTextTitle"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5sp"
+                    android:gravity="center_vertical|right"
+                    android:text="Search"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.design.widget.AppBarLayout>
+</RelativeLayout>

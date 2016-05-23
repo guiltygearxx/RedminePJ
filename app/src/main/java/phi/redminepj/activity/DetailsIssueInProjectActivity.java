@@ -1,10 +1,12 @@
 package phi.redminepj.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -34,12 +36,6 @@ public class DetailsIssueInProjectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_issue_details);
         loadAllField();
-        final DateUtil dateUtil = new DateUtil();
-        final Date date = new Date();
-        String strDateFormat = "dd/MM/yyyy";
-        SimpleDateFormat sdf = new SimpleDateFormat(strDateFormat);
-        System.out.println("Ngày hôm nay : " + sdf.format(date));
-
         SharedPreferences preferences = getSharedPreferences(PREFS_ID_ISSUE, Context.MODE_PRIVATE);
         int idissue = preferences.getInt("id_issue_in_details", 0);
 
@@ -116,5 +112,10 @@ public class DetailsIssueInProjectActivity extends AppCompatActivity {
         textCreateDate = (TextView) findViewById(R.id.textCreateDate);
         textUpdateDate = (TextView) findViewById(R.id.textUpdateDate);
         textEstimatedHours = (TextView) findViewById(R.id.textEstimatedHours);
+    }
+
+    public void editIssueActivity(View view){
+        Intent intent = new Intent(DetailsIssueInProjectActivity.this, EditIssueActivity.class);
+        startActivity(intent);
     }
 }
